@@ -1,10 +1,14 @@
 body{
-	margin:50px;
-	padding:20px;
+	margin:0;
+	padding:0;
+}
+body::-webkit-scrollbar
+{
+	display: none;
 }
 #container{
 	
-	   top: 20px;
+	top: 20px;
 	left: 0;
 	width:200%;
 	height: 100vh;
@@ -19,10 +23,12 @@ body{
 	box-sizing: border-box;
 	display: flex;
 	justify-content: center;
+	scroll-behavior: smooth;
 
 }
 
 .container{
+	scroll-behavior: smooth;
 	width: 100%;
 	height: auto;
 	overflow: auto;
@@ -34,13 +40,26 @@ body{
 }
 .box{
 	width: auto;
-	height: 400px;
+	max-width: 80%;
+	padding-bottom: 1rem;
 	background: black;
 	margin:10px;
 	box-sizing: border-box;
 	border-radius: 10px;
+	text-align: center;
 }
-
+.container::-webkit-scrollbar
+{
+	width: 8px;
+}
+.container::-webkit-scrollbar-track {
+  background: #ccc;
+  border-radius: 10px;
+}
+.container::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 10px;
+}
  @media screen and (max-width:100%){
  	.box{
  		width: auto;
@@ -81,5 +100,4 @@ body{
   background-color: #e5eecc;
   border: solid 1px #c3c3c3;
   display: none;
-
 }
